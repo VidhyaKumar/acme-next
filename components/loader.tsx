@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image from "next/image"
 
-export default function RootLoading() {
+export function Loader() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center">
+    <div className="flex items-center justify-center h-full my-auto">
       <Image
         src="/images/pokeball.svg"
         width={128}
@@ -11,5 +11,5 @@ export default function RootLoading() {
         className="animate-bounce"
       />
     </div>
-  );
+  )
 }

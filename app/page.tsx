@@ -1,25 +1,27 @@
-import Pokedex from "pokedex-promise-v2"
+import { Suspense } from "react"
 
-import { Pokemon } from "@/components/pokemon"
+import { Logo } from "@/components/logo"
+import { Pokemons } from "@/components/pokemons"
+import { Skeleton } from "@/components/skeleton"
 
 interface HomePageProps {
   searchParams: {
-    name: string
+    name?: string
+    page?: string
   }
 }
 
-export default async function Home({ searchParams }: HomePageProps) {
-  const P = new Pokedex()
-  const pokemons = await P.getPokemonsList({ limit: 24, offset: 0 })
-  await new Promise((resolve) => setTimeout(resolve, 1000))
+export default function Page({ searchParams }: HomePageProps) {
+  const page = searchParams.page ? parseInt(searchParams.page) : 1
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="grid grid-cols-6 gap-8">
-        {pokemons.results.map((pokemon) => (
-          <Pokemon name={pokemon.name} key={pokemon.name} />
-        ))}
+    <main className="flex min-h-screen flex-col p-16 w-full items-center">
+      <div className="mb-10">
+        <Logo />
       </div>
+      <Suspense fallback={<Skeleton />} key={page}>
+        <Pokemons page={page} />
+      </Suspense>
     </main>
   )
 }
