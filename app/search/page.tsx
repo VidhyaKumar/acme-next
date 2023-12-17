@@ -4,8 +4,8 @@ import Link from "next/link"
 import Pokedex from "pokedex-promise-v2"
 
 import { Button } from "@/components/ui/button"
+import { CardSkeleton } from "@/components/card-skeleton"
 import { Pokemon } from "@/components/pokemon"
-import { Skeleton } from "@/components/skeleton"
 
 interface SearchPageProps {
   searchParams: {
@@ -43,7 +43,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   }
 
   return (
-    <Suspense fallback={<Skeleton />} key={query}>
+    <Suspense fallback={<CardSkeleton />} key={query}>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {filteredPokemons.map((pokemon) => (
           <Pokemon name={pokemon.name} key={pokemon.name} />

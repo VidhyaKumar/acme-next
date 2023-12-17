@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation"
 import { createUrl } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
 
-export default function Search() {
+export function Search() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
