@@ -16,7 +16,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "VK Pokedex",
-  description: "Pokedex built with Next 14 RSC & PPR",
+  description: "Pokedex built with Next 14 App Router & RSC",
 }
 
 export default function RootLayout({
