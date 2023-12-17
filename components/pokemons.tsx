@@ -13,10 +13,10 @@ export async function Pokemons({ page }: PokemonsProps) {
   const pokemons = await P.getPokemonsList({ limit: 10, offset })
 
   return (
-    <div className="container mx-auto flex flex-col">
-      <div className="w-full grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mb-10">
+    <>
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {pokemons.results.length === 0 && (
-          <p className="text-xl text-slate-500 col-span-12 text-center">
+          <p className="col-span-12 text-xl text-center text-slate-500">
             No pokemons found
           </p>
         )}
@@ -29,6 +29,6 @@ export async function Pokemons({ page }: PokemonsProps) {
         hasNextPage={!!pokemons.next}
         page={page}
       />
-    </div>
+    </>
   )
 }

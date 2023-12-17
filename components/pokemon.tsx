@@ -37,21 +37,21 @@ export async function Pokemon({ name }: PokemonProps) {
         pokemon.types[0].type.name === "unknown" && "border-white"
       )}
     >
-      <div className="w-full flex-1 flex justify-center items-center p-8">
+      <div className="flex items-center justify-center flex-1 w-full p-4">
         <Image
+          className="object-contain object-center"
+          alt={pokemon.name}
           src={
             pokemon.sprites.other["official-artwork"].front_default ||
             "/images/pokeball.svg"
           }
           width={120}
           height={120}
-          className="object-contain object-center"
-          alt={pokemon.name}
         />
       </div>
       <div
         className={cn(
-          "w-full pt-4 pb-3 px-8",
+          "w-full pt-4 pb-3 px-4",
           pokemon.types[0].type.name === "grass" && "bg-green-400",
           pokemon.types[0].type.name === "fire" && "bg-amber-400",
           pokemon.types[0].type.name === "water" && "bg-blue-400",
@@ -74,7 +74,7 @@ export async function Pokemon({ name }: PokemonProps) {
           pokemon.types[0].type.name === "unknown" && "bg-white"
         )}
       >
-        <h1 className="text-xl capitalize text-center text-slate-900">
+        <h1 className="text-xl text-center capitalize truncate text-slate-900">
           {pokemon.name}
         </h1>
       </div>

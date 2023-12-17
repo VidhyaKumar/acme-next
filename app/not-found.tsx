@@ -7,11 +7,11 @@ export default function NotFound() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center">
       <Image
+        className="object-contain object-center mb-2"
+        alt="Poke Ball"
         src="/images/pokeball.svg"
         width={75}
         height={75}
-        alt="Poke Ball"
-        className="object-contain object-center mb-2"
         priority
       />
       <p className="text-xl text-slate-500 mb-8">Pokemon not found</p>

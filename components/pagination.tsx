@@ -20,18 +20,16 @@ export function Pagination({
   const nextPage = page + 1
 
   return (
-    <div className="flex flex-row gap-x-4 mx-auto">
+    <div className="flex flex-row mx-auto mt-10 gap-x-4">
       <Button
         variant="secondary"
         className="min-w-[105px]"
-        size="lg"
         onClick={() => router.push(prevPage === 1 ? "/" : `/?page=${prevPage}`)}
         disabled={!hasPrevPage}
       >
         Previous
       </Button>
       <Button
-        size="lg"
         className="min-w-[105px]"
         onClick={() => router.push(`/?page=${nextPage}`)}
         disabled={!hasNextPage}

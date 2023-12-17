@@ -4,7 +4,7 @@ export function Skeleton() {
   const shimmer = `relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_1.5s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent`
 
   return (
-    <div className="container mx-auto flex flex-col">
+    <div className="w-full flex flex-col">
       <div className="w-full grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {Array.from({ length: 10 }, (_, i) => (
           <div
