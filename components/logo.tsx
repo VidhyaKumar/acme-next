@@ -9,7 +9,7 @@ export function Logo() {
         alt="Pokemon"
         src="/images/pokemon.svg"
         width={180}
-        height={60}
+        height={66}
         priority
       />
     </Link>
