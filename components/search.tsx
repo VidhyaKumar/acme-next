@@ -32,7 +32,9 @@ export default function Search() {
         type="text"
         name="search"
         placeholder="Search for pokemons..."
+        autoCorrect="off"
         autoComplete="off"
+        autoCapitalize="off"
         defaultValue={searchParams?.get("q") || ""}
       />
     </form>
