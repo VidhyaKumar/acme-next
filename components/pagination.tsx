@@ -1,6 +1,6 @@
 "use client"
 
-import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 
@@ -15,26 +15,30 @@ export function Pagination({
   hasPrevPage,
   hasNextPage,
 }: PaginationProps) {
-  const router = useRouter()
   const prevPage = page === 1 ? 1 : page - 1
   const nextPage = page + 1
 
   return (
     <div className="flex flex-row mx-auto gap-x-4">
-      <Button
-        variant="secondary"
-        className="min-w-[105px]"
-        onClick={() => router.push(prevPage === 1 ? "/" : `/?page=${prevPage}`)}
-        disabled={!hasPrevPage}
-      >
-        Previous
+      <Button variant="secondary" className="min-w-[105px]" asChild>
+        <Link
+          href={prevPage === 1 ? "/" : `/?page=${prevPage}`}
+          aria-disabled={!hasPrevPage}
+          className="aria-[disabled='true']:pointer-events-none aria-[disabled='true']:opacity-50"
+          prefetch
+        >
+          Previous
+        </Link>
       </Button>
-      <Button
-        className="min-w-[105px]"
-        onClick={() => router.push(`/?page=${nextPage}`)}
-        disabled={!hasNextPage}
-      >
-        Next
+      <Button className="min-w-[105px]" asChild>
+        <Link
+          href={`/?page=${nextPage}`}
+          aria-disabled={!hasNextPage}
+          className="aria-[disabled='true']:pointer-events-none aria-[disabled='true']:opacity-50"
+          prefetch
+        >
+          Next
+        </Link>
       </Button>
     </div>
   )
