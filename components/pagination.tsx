@@ -20,7 +20,7 @@ export function Pagination({
   const nextPage = page + 1
 
   return (
-    <div className="flex flex-row mx-auto mt-10 gap-x-4">
+    <div className="flex flex-row mx-auto gap-x-4">
       <Button
         variant="secondary"
         className="min-w-[105px]"

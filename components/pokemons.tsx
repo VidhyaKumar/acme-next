@@ -24,11 +24,13 @@ export async function Pokemons({ page }: PokemonsProps) {
           <Pokemon name={pokemon.name} key={pokemon.name} />
         ))}
       </div>
-      <Pagination
-        hasPrevPage={!!pokemons.previous}
-        hasNextPage={!!pokemons.next}
-        page={page}
-      />
+      <div className="mt-10 self-center">
+        <Pagination
+          hasPrevPage={!!pokemons.previous}
+          hasNextPage={!!pokemons.next}
+          page={page}
+        />
+      </div>
     </>
   )
 }

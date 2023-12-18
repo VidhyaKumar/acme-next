@@ -28,14 +28,14 @@ export function Search() {
   return (
     <form onSubmit={onSubmit}>
       <Input
-        key={searchParams?.get("q")}
+        key={searchParams.get("q")}
         type="text"
         name="search"
         placeholder="Search for pokemons..."
         autoCorrect="off"
         autoComplete="off"
         autoCapitalize="off"
-        defaultValue={searchParams?.get("q") || ""}
+        defaultValue={searchParams.get("q") || ""}
       />
     </form>
   )
