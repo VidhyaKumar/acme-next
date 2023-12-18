@@ -25,7 +25,6 @@ export function Pagination({
           href={prevPage === 1 ? "/" : `/?page=${prevPage}`}
           aria-disabled={!hasPrevPage}
           className="aria-[disabled='true']:pointer-events-none aria-[disabled='true']:opacity-50"
-          prefetch
         >
           Previous
         </Link>
@@ -35,7 +34,6 @@ export function Pagination({
           href={`/?page=${nextPage}`}
           aria-disabled={!hasNextPage}
           className="aria-[disabled='true']:pointer-events-none aria-[disabled='true']:opacity-50"
-          prefetch
         >
           Next
         </Link>
