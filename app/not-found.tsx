@@ -3,8 +3,6 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 
-export const runtime = "edge"
-
 export default function NotFound() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center">
