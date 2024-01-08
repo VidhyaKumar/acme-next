@@ -10,6 +10,8 @@ interface HomePageProps {
   }
 }
 
+export const runtime = "edge"
+
 export default function Page({ searchParams }: HomePageProps) {
   const page = searchParams.page ? parseInt(searchParams.page) : 1
 

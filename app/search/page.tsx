@@ -13,6 +13,8 @@ interface SearchPageProps {
   }
 }
 
+export const runtime = "edge"
+
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const query = String(searchParams.q).toLowerCase()
   const P = new Pokedex()
